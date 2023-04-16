@@ -14,7 +14,7 @@ const app = express();
 
 //enables Cross-Origin Resource Sharing (CORS) with credential support
 app.use(cors({
-    Credential:true
+    credentials:true
 }))
 //enable HTTP response compression
 app.use(compression());
