@@ -31,8 +31,8 @@ console.log(`listening on http://localhost:${PORT}`);
 })
 //initiate mongoose
 mongoose.Promise=Promise;
-mongoose.connect(process.env.DB_URI)
-mongoose.connection.on("error",(err:Error)=>{console.log(err)})
+mongoose.connect(process.env.DB_URI).then(()=>console.log("successed to connect to db")).catch(()=>console.log("change URI env variable"))
+<!-- mongoose.connection.on("error",(err:Error)=>{console.log(err)}) -->
 
 app.use("/", router())
 
